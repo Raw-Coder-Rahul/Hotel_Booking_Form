@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Luxe Hotel Booking</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="light-mode">
+
+  <header class="header">
+    <div class="logo">
+      <img src="" alt="Hotel Logo">
+    </div>
+    <nav class="navbar">
+      <ul class="navLink">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Rooms</a></li>
+        <li><a href="#">Dining</a></li>
+        <li><a href="#">Spa</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button></button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Book Your Royal Stay</h1>
+      <p>Luxury, elegance, and comfort await you.</p>
+      <div class="availability-banner">
+        Only 5 Royal Suites left for this weekend!
+      </div>
+    </div>
+  </section>
+
+  <section class="booking-section">
+    <h2 class="section-title">Hotel Booking Form</h2>
+    <form id="bookingForm" class="booking-form">
+      <div class="form-group">
+        <label for="checkin">Check-in Date</label>
+        <input type="date" id="checkin" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkout">Check-out Date</label>
+        <input type="date" id="checkout" required>
+      </div>
+
+      <div class="form-group">
+        <label for="room">Room Type</label>
+        <select id="room" required>
+          <option value="">Select a room</option>
+          <option value="single">Single Room</option>
+          <option value="double">Double Room</option>
+          <option value="suite">Royal Suite</option>
+          <option value="penthouse">Penthouse</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Guest Count</label>
+        <input type="number" id="guests" min="1" required>
+      </div>
+
+      <div class="form-group">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" placeholder="Any special requirements..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>Estimated Price</label>
+        <div id="priceEstimate">₹0</div>
+      </div>
+
+      <button type="submit" class="submit-btn">Book Now</button>
+    </form>
+  </section>
+
+  <section class="calendar-section">
+    <h2 class="section-title">Availability Calendar</h2>
+    <div id="calendar">
+      <div class="calendar-day booked">2026-02-10 - Booked</div>
+      <div class="calendar-day available">2026-02-12 - Available</div>
+      <div class="calendar-day booked">2026-02-15 - Booked</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 RS Groups Of Hotels. All Rights Reserved.</p>
+  </footer>
+
+  <div class="theme-widget">
+    <button id="lightBtn" title="Light Mode">🌞</button>
+    <button id="darkBtn" title="Dark Mode">🌙</button>
+    <button id="royalBtn" title="Royal Mode">👑</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
