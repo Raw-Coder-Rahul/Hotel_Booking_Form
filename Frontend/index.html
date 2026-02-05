@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Luxe Hotel Booking</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+  <!-- intl-tel-input CSS for phone field -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+</head>
+<body class="light-mode">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <img src="assets/images/S.png" alt="Hotel Logo">
+    </div>
+    <nav class="navbar">
+      <ul class="navLink" id="navLinks">
+        <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#"><i class="fa-solid fa-bed"></i> Rooms</a></li>
+        <li><a href="#"><i class="fa-solid fa-utensils"></i> Dining</a></li>
+        <li><a href="#"><i class="fa-solid fa-spa"></i> Spa</a></li>
+        <li><a href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+      <button id="menuBtn" class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Book Your Royal Stay</h1>
+      <p>Luxury, elegance, and comfort await you.</p>
+      <div class="availability-banner">
+        ✨ Only 5 Royal Suites left for this weekend! ✨
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Form -->
+  <section class="booking-section">
+    <h2 class="section-title">Book Your Stay</h2>
+    <form id="bookingForm" class="booking-form">
+      
+      <!-- Personal Details -->
+      <div class="form-group">
+        <label for="fullname">Full Name</label>
+        <input type="text" id="fullname" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <!-- Stay Details -->
+      <div class="form-group">
+        <label for="checkin">Check-in Date</label>
+        <input type="date" id="checkin" required>
+      </div>
+
+      <div class="form-group">
+        <label for="checkout">Check-out Date</label>
+        <input type="date" id="checkout" required>
+      </div>
+
+      <div class="form-group">
+        <label for="room">Room Type</label>
+        <select id="room" required>
+          <option value="">Select a room</option>
+          <option value="single">Single Room</option>
+          <option value="double">Double Room</option>
+          <option value="suite">Royal Suite</option>
+          <option value="penthouse">Penthouse</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="guests">Guest Count</label>
+        <input type="number" id="guests" min="1" required>
+      </div>
+
+      <!-- Special Requests -->
+      <div class="form-group full-width">
+        <label for="requests">Special Requests</label>
+        <textarea id="requests" placeholder="Any special requirements..."></textarea>
+      </div>
+
+      <!-- Price Estimate -->
+      <div class="form-group full-width">
+        <label>Total Price Estimate</label>
+        <div id="priceEstimate">₹0</div>
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group full-width">
+        <button type="submit" class="button-63" id="payBtn">Book Now</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- Calendar Section -->
+  <section class="calendar-section">
+    <h2 class="section-title">Availability Calendar</h2>
+    <div id="calendar">
+      <div class="calendar-day booked">2026-02-10 - Booked</div>
+      <div class="calendar-day available">2026-02-12 - Available</div>
+      <div class="calendar-day booked">2026-02-15 - Booked</div>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards-section">
+    <h2 class="section-title">Featured Rooms</h2>
+    <div class="card-container" id="roomCards">
+      <div class="room-card">
+        <img src="assets/images/single.jpg" alt="Single Room">
+        <h3>Single Room</h3>
+        <p>Cozy room for solo travelers.</p>
+        <span class="price">₹5000</span>
+      </div>
+      <div class="room-card">
+        <img src="assets/images/double.jpg" alt="Double Room">
+        <h3>Double Room</h3>
+        <p>Perfect for couples with elegant interiors.</p>
+        <span class="price">₹8000</span>
+      </div>
+      <div class="room-card">
+        <img src="assets/images/suite.jpg" alt="Royal Suite">
+        <h3>Royal Suite</h3>
+        <p>Luxury suite with premium amenities.</p>
+        <span class="price">₹15000</span>
+      </div>
+      <div class="room-card">
+        <img src="assets/images/penthouse.jpg" alt="Penthouse">
+        <h3>Penthouse</h3>
+        <p>Top-floor penthouse with panoramic views.</p>
+        <span class="price">₹25000</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <h2 class="section-title">Stay Updated</h2>
+    <form id="newsletterForm">
+      <input type="email" id="newsletterEmail" placeholder="Enter your email" required>
+      <!-- Gradient button style applied -->
+      <button type="submit" class="button-64"><span class="text">Subscribe</span></button>
+    </form>
+  </section>
+
+  <!-- Reputation Section -->
+  <section class="reputation">
+    <div class="reputation-content">
+      <h2 class="section-title">Why Choose Royal Luxe?</h2>
+      <p>🏆 Award-winning hospitality, trusted by thousands of guests worldwide.</p>
+      <p>✨ Experience unmatched luxury, personalized service, and timeless elegance.</p>
+      <p>🌍 Recognized as one of the top hotels for excellence and comfort.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 RS Groups Of Hotels. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Theme Widget -->
+  <div class="theme-widget">
+    <button id="lightBtn" title="Light Mode">🌞</button>
+    <button id="darkBtn" title="Dark Mode">🌙</button>
+    <button id="royalBtn" title="Royal Mode">👑</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+  <!-- Razorpay checkout script -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
