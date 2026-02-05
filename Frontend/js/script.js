@@ -1,3 +1,5 @@
+const API_BASE = "http://localhost:5000";
+
 // Dummy Data
 const dummyCalendarData = [
   { date: "2026-02-10", status: "Booked" },
@@ -97,11 +99,11 @@ document.getElementById("bookingForm")?.addEventListener("submit", async functio
   const totalAmount = roomData ? roomData.price * nights * 100 : 0; // Razorpay expects paise
 
   // Fetch Razorpay key from backend
-  const keyRes = await fetch("http://localhost:5000/api/get-key");
+  const keyRes = await fetch(`${API_BASE}/api/get-key`);
   const { key } = await keyRes.json();
 
   // Create order via backend
-  const order = await fetch("http://localhost:5000/api/create-order", {
+  const order = await fetch(`${API_BASE}/api/create-order`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ amount: totalAmount })
@@ -118,7 +120,7 @@ document.getElementById("bookingForm")?.addEventListener("submit", async functio
       console.log("Payment ID:", response.razorpay_payment_id);
 
       // Save booking to backend (MongoDB)
-      await fetch("http://localhost:5000/api/save-booking", {
+      await fetch(`${API_BASE}/api/save-booking`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

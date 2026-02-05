@@ -1,10 +1,12 @@
 let allBookings = [];
 
+const API_BASE = "http://localhost:5000";
+
 // Load Bookings from Backend
 async function loadBookings() {
   const status = document.getElementById("statusMessage");
   try {
-    const res = await fetch("http://localhost:5000/api/bookings");
+    const res = await fetch(`${API_BASE}/api/bookings`);
     if (!res.ok) throw new Error("Failed to fetch bookings");
     allBookings = await res.json();
 
