@@ -1,6 +1,6 @@
 let allBookings = [];
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://hotel-booking-form-tevu.onrender.com";
 
 // Load Bookings from Backend
 async function loadBookings() {
