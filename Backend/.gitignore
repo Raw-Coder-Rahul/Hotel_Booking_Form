@@ -1,8 +1,4 @@
-# Ignore environment files
 .env
-
-# Ignore node modules
 /node_modules
-
-# Ignore logs
 *.log
+package-lock.json
