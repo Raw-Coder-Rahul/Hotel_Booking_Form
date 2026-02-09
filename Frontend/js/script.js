@@ -6,7 +6,6 @@ const dummyCalendarData = [
   { date: "2026-02-12", status: "Available" },
   { date: "2026-02-15", status: "Booked" },
 ];
-
 const dummyRooms = [
   { name: "Single Room", price: 1, img: "assets/images/single.jpg", desc: "Cozy room for solo travelers." },
   { name: "Double Room", price: 8000, img: "assets/images/double.jpg", desc: "Perfect for couples with elegant interiors." },
