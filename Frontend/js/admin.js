@@ -12,7 +12,7 @@ async function loadBookings() {
 
     if (!allBookings.length) {
       renderNoBookings();
-      if (status) status.textContent = "📭 No bookings available.";
+      if (status) status.textContent = "No bookings available.";
     } else {
       renderBookings(allBookings);
       if (status) status.textContent = `Loaded ${allBookings.length} bookings.`;
